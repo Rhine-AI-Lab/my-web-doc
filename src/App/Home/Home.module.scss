@@ -22,7 +22,7 @@
         justify-content: center;
 
         .title {
-          max-width: 1400px;
+          max-width: 1200px;
           height: 360px;
           background-repeat: no-repeat;
           background-size: cover;
@@ -31,6 +31,7 @@
           margin: 20px;
           overflow: hidden;
           flex-grow: 1;
+          position: relative;
 
           .slide {
             width: 200px;
@@ -38,13 +39,19 @@
             background-color: #ffffff99;
             backdrop-filter: blur(10px);
             position: absolute;
-            right: 32px;
-            top: 32px;
+            right: 12px;
+            top: 12px;
             border-radius: 19px;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0 20px;
+            opacity: 0.6;
+            transition: opacity 0.18s ease-in-out;
+          }
+
+          .slide:hover {
+            opacity: 1;
           }
 
           .text {

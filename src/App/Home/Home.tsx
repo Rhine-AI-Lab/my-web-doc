@@ -49,10 +49,10 @@ function Home() {
                     setFss((e.target.value - 50) / 10)
                   }} />
                 </div>
-                <div style={fontStyle(84)} className={Style.text}>
+                <div style={fontStyle(84, 100)} className={Style.text}>
                   {article.title}
                 </div>
-                <div style={fontStyle(22)} className={Style.description}>
+                <div style={fontStyle(22, 36)} className={Style.description}>
                   {article.description}
                 </div>
               </div>

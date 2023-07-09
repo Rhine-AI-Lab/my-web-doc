@@ -1,7 +1,7 @@
 # React Docs
 
 ```text
-网页端文档
+Web中Material3风格文档项目
 
 技术栈: React, MaterialYou, TypeScript, Sass, Redux, Electron, Eslint, Axios。
 ```
@@ -12,6 +12,7 @@
 ### 1. 快速开始
 
 ```text
+npm i -g yarn
 yarn install
 yarn start
 ```

@@ -129,7 +129,7 @@ export const articles = [
     IMG /image/background/a1.png
     # Jetpack Compose
     Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI development on Android. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs.
-    ### Web
+    # Web
     Material Design for the web is the web implementation of Material Design, a visual language that synthesizes the classic principles of good design with the innovation of technology and science.
     `
   }, {

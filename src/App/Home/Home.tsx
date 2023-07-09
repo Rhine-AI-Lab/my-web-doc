@@ -28,14 +28,16 @@ function Home() {
       }} fss={fss}>
         <div className={Style.content}>
           <div className={Style.article}>
-            <div className={Style.title} style={{
-              backgroundImage: `url("${article.image}")`,
-            }}>
-              <div className={Style.text}>
-                {article.title}
-              </div>
-              <div className={Style.description}>
-                {article.description}
+            <div className={Style.titleHolder}>
+              <div className={Style.title} style={{
+                backgroundImage: `url("${article.image}")`,
+              }}>
+                <div className={Style.text}>
+                  {article.title}
+                </div>
+                <div className={Style.description}>
+                  {article.description}
+                </div>
               </div>
             </div>
             <div className={Style.body}>
@@ -44,10 +46,12 @@ function Home() {
                   line = line.trim()
                   if (line === '') {
                     return <br key={i}/>
-                  } else if (line.startsWith('### ')) {
-                    return <div key={i} className={Style.subTitle}>{line.substr(4)}</div>
+                  } else if (line.startsWith('# ')) {
+                    return <div key={i} className={Style.firstTitle}>{line.substring(2)}</div>
                   } else if (line.startsWith('IMG ')) {
-                    return <img key={i} className={Style.image} src={line.substr(4)}/>
+                    return <img key={i} className={Style.image} src={line.substring(4)}/>
+                  } else if (line.startsWith('### ')) {
+                    return <div key={i} className={Style.terTitle}>{line.substring(4)}</div>
                   } else {
                     return <div key={i} className={Style.text}>{line}</div>
                   }

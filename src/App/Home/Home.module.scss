@@ -32,15 +32,31 @@
           overflow: hidden;
           flex-grow: 1;
 
+          .slide {
+            width: 200px;
+            height: 50px;
+            background-color: #ffffff99;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            right: 32px;
+            top: 32px;
+            border-radius: 19px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+          }
+
           .text {
             font-size: 84px;
             font-weight: 600;
+            line-height: 30px;
           }
 
           .description {
             font-size: 22px;
             line-height: 32px;
-            margin-top: 40px;
+            margin-top: 60px;
             overflow: hidden;
           }
         }
@@ -137,8 +153,8 @@
           padding: 30px;
           cursor: pointer;
           bottom: 30px;
-          left: 0;
-          right: 0;
+          left: 20px;
+          right: 20px;
           align-items: center;
           color: #222222;
 

@@ -29,6 +29,16 @@ export default function Navigation(props: NavigationProps) {
     }
   }
   
+  function fontStyle(fs = 18, lh: number | null = null) {
+    const style: any = {
+      fontSize: fs + fss / 2 + 'px',
+    }
+    if (lh !== null) {
+      style['lineHeight'] = lh + fss + 'px'
+    }
+    return style
+  }
+  
   return (
     <div className={Style.Navigation}>
       <div className={Style.content}>
@@ -96,7 +106,7 @@ export default function Navigation(props: NavigationProps) {
                 }}>
                   <Icon color='#444444'>{item.icon}</Icon>
                 </div>
-                <span className={Style.title}>{item.title}</span>
+                <span className={Style.title} style={fontStyle(13)}>{item.title}</span>
               </div>
             })
           }

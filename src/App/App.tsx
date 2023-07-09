@@ -1,9 +1,9 @@
 import React from 'react'
 import Style from './App.module.scss'
 import {ThemeProvider} from "@mui/material";
-import theme from "tailwindcss/defaultTheme";
 import {Route, Routes} from "react-router-dom";
 import Home from "./Home/Home";
+import {theme} from "./theme";
 
 function App() {
   return (

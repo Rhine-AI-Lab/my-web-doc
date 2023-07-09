@@ -1,0 +1,158 @@
+$left-size: 88px;
+
+.Navigation {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  user-select: none;
+
+  .drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $left-size;
+    bottom: 0;
+  }
+
+  .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $left-size;
+    bottom: 0;
+    padding: 10px 0;
+    background: #f3f6fc;
+    overflow: auto;
+
+    .firstBtn {
+      width: 100%;
+      height: 72px;
+      margin: 6px 0;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.18s ease-in-out;
+      cursor: pointer;
+
+      .iconHolder {
+        width: 56px;
+        height: 32px;
+        border-radius: 16px;
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.18s ease-in-out;
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.18s ease-in-out;
+        }
+      }
+
+      .title {
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        font-weight: 400;
+        color: #101010;
+        transition: all 0.18s ease-in-out;
+      }
+    }
+
+    .firstBtn:hover {
+      .iconHolder {
+        background: rgba(68, 71, 70, 0.08);
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .title {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .sub {
+    position: absolute;
+    top: 0;
+    left: $left-size;
+    width: 240px;
+    bottom: 0;
+    padding: 6px;
+    background: #f3f6fc;
+    border-left: 1px solid #dddddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    transition: all 0.34s ease-in-out;
+    overflow: auto;
+
+    .lineBtn {
+      cursor: pointer;
+      position: relative;
+      height: 50px;
+      padding: 2px 9px;
+      margin: 1px;
+      border-radius: 27px;
+      transition: all 0.18s ease-in-out;
+
+      .text {
+        font-size: 15px;
+        font-weight: 400;
+        color: #121418;
+        transition: all 0.18s ease-in-out;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 22px;
+      }
+    }
+
+    .lineBtn:hover {
+      background: rgba(68, 71, 70, 0.08);
+    }
+    .lineBtn:active {
+      background: rgba(19, 19, 19, 0.08);
+    }
+
+    .terMenu {
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+
+      .terTitle {
+
+        .arrow {
+          position: absolute;
+          top: 50%;
+          right: 18px;
+          transform: translateY(-50%);
+          transition: all 0.18s ease-in-out;
+        }
+
+        .arrowReverse {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+      .terItem {
+        margin-left: 18px;
+      }
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 88px;
+    transition: all 0.34s ease-in-out;
+    overflow: auto;
+  }
+}

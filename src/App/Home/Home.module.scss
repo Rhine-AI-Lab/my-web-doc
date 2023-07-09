@@ -1,0 +1,120 @@
+.Home {
+  width: 100%;
+  height: 100%;
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .article {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .title {
+        max-width: 1400px;
+        height: 360px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 10px;
+        border-radius: 28px;
+        padding: 80px 70px 20px 70px;
+        overflow: hidden;
+
+        .text {
+          font-size: 84px;
+          font-weight: 600;
+        }
+
+        .description {
+          font-size: 22px;
+          line-height: 32px;
+          margin-top: 40px;
+        }
+      }
+
+      .body {
+        max-width: 900px;
+        margin-bottom: 80px;
+
+        .subTitle {
+          font-size: 48px;
+          font-weight: 500;
+          margin: 80px 4px 40px 4px;
+          color: #222222;
+        }
+
+        .text {
+          font-size: 19px;
+          color: #333333;
+          margin: 20px 4px;
+          line-height: 26px;
+        }
+
+        .image {
+          width: 100%;
+          margin: 20px 0;
+          border-radius: 28px;
+        }
+      }
+
+      .control {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        margin-bottom: 50px;
+        align-items: center;
+        justify-content: center;
+
+        div {
+          max-width: 500px;
+          height: 200px;
+          background: #f5f7fa;
+          flex-grow: 1;
+          margin: 10px;
+          border-radius: 32px;
+          transition: background-color 0.18s ease-in-out;
+        }
+
+        div:hover {
+          background: #c2e7ff;
+        }
+      }
+
+      .footer {
+        height: 300px;
+        width: 100%;
+        max-width: 1400px;
+        position: relative;
+
+        .author {
+          position: absolute;
+          display: flex;
+          padding: 30px;
+          cursor: pointer;
+          bottom: 30px;
+          left: 0;
+          right: 0;
+          align-items: center;
+
+          img {
+            width:  40px;
+            height: 40px;
+            border-radius: 6px;
+            margin-right: 16px;
+          }
+
+          p {
+            flex-grow: 1;
+          }
+
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

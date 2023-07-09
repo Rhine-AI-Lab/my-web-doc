@@ -132,5 +132,21 @@ export const articles = [
     ### Web
     Material Design for the web is the web implementation of Material Design, a visual language that synthesizes the classic principles of good design with the innovation of technology and science.
     `
+  }, {
+    title: 'MDC-Android',
+    image: '/image/background/2.jpg',
+    description: 'Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.',
+    content: `
+    ### Announcements
+    Stay up to date with the latest Material Components for Android news and updates. Subscribe to our newsletter.
+    `
+  }, {
+    title: 'Foundations',
+    image: '/image/background/2.jpg',
+    description: 'Learn about the principles that guide our design and development process, and get familiar with the Material Design pillars: Material Theming, Material Motion, and Material Sound.',
+    content: `
+    ### Accessibility
+    Accessibility is a core design principle of Material Design and informs many of its components. Accessibility is what allows users of all abilities to perceive, understand, navigate, interact with, and contribute to your app.
+    `
   }
 ]

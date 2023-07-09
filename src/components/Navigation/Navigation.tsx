@@ -3,16 +3,30 @@ import Style from './Navigation.module.scss'
 import Icon from "../Icon/Icon";
 
 export default function Navigation(props: NavigationProps) {
-  const { data, onChangeIndex, fss } = props
+  const { data, onChangeValue, fss, value } = props
   
   const [subIndex, setSubIndex] = useState(-1)
-  const [firstSelected, setFirstSelected] = useState(0)
-  const [selected, setSelected] = useState(0)
   const [openTer, setOpenTer] = useState(-1)
-  const onSelected = (subIndex: number, id: number) => {
-    setSelected(id)
-    setFirstSelected(subIndex)
-    onChangeIndex(id)
+  let firstSelected = 0
+  
+  for (const di in data) {
+    const datum = data[di]
+    for (const item of datum.content) {
+      if (item.content === undefined) {
+        if (item.id === value) {
+          firstSelected = parseInt(di)
+          break
+        }
+      } else {
+        for (const ci in item.content) {
+          const cItem = item.content[ci]
+          if (cItem.id === value) {
+            firstSelected = parseInt(di)
+            break
+          }
+        }
+      }
+    }
   }
   
   return (
@@ -28,8 +42,8 @@ export default function Navigation(props: NavigationProps) {
                 return <div
                   key={index}
                   className={Style.lineBtn + ' ' + Style.subItem}
-                  style={{background: item.id === selected ? '#c2e7ff' : undefined}}
-                  onClick={e => onSelected(subIndex, item.id)}
+                  style={{background: item.id === value ? '#c2e7ff' : undefined}}
+                  onClick={e => onChangeValue(item.id)}
                 >
                   <span className={Style.text}>{item.title}</span>
                 </div>
@@ -49,8 +63,8 @@ export default function Navigation(props: NavigationProps) {
                         return <div
                           key={index}
                           className={Style.lineBtn + ' ' + Style.terItem}
-                          style={{background: selected === terItem.id ? '#c2e7ff' : undefined}}
-                          onClick={e => onSelected(subIndex, terItem.id)}
+                          style={{background: value === terItem.id ? '#c2e7ff' : undefined}}
+                          onClick={e => onChangeValue(terItem.id)}
                         >
                           <span className={Style.text}>{terItem.title}</span>
                         </div>
@@ -67,7 +81,15 @@ export default function Navigation(props: NavigationProps) {
             data.map((item: any, index: number) => {
               return <div className={Style.firstBtn} key={index} onMouseEnter={e => {
                 setSubIndex(index)
-                setSelected(item.content[0].id)
+                for (const contentElement of item.content) {
+                  if (contentElement.content) {
+                    for (const element of contentElement.content) {
+                      if (element.id === value) {
+                        setOpenTer(contentElement.oid)
+                      }
+                    }
+                  }
+                }
               }}>
                 <div className={Style.iconHolder} style={{
                   background: firstSelected === index ? '#c2e7ff' : undefined,
@@ -86,6 +108,7 @@ export default function Navigation(props: NavigationProps) {
 
 interface NavigationProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   data: any
-  onChangeIndex: (index: number) => void
+  value: number
+  onChangeValue: (index: number) => void
   fss: number
 }

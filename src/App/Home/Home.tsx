@@ -4,15 +4,26 @@ import '@material/web/button/filled-button.js'
 import '@material/web/button/outlined-button.js'
 import Navigation from "../../components/Navigation/Navigation";
 import {articles, data} from "./data";
+import Icon from "../../components/Icon/Icon";
 
 function Home() {
   const [fss, setFss] = React.useState(1.0)
   const [articleIndex, setArticleIndex] = React.useState(0)
   const article = articles[articleIndex]
   
+  const getArticle = (index: number) => {
+    return articles[index]
+  }
+  const next = () => {
+    return getArticle(articleIndex+1)
+  }
+  const prev = () => {
+    return getArticle(articleIndex-1)
+  }
+  
   return (
     <div className={Style.Home}>
-      <Navigation data={data} onChangeIndex={i => {
+      <Navigation data={data} value={articleIndex} onChangeValue={i => {
         setArticleIndex(i)
       }} fss={fss}>
         <div className={Style.content}>
@@ -44,12 +55,29 @@ function Home() {
               }
             </div>
             <div className={Style.control}>
-              <div>
-                <h1>← Previous</h1>
-                <span></span>
+              <div onClick={e => {
+                if (!prev()) return
+                setArticleIndex(articleIndex-1)
+              }} style={{
+                cursor: prev() ? 'pointer' : 'not-allowed'
+              }}>
+                <h1>
+                  <Icon size='22px' color='#444746'>round_west</Icon>
+                  <span>Previous</span>
+                </h1>
+                <p>{prev() ? prev().title : 'No more thing'}</p>
               </div>
-              <div>
-                <h1>Next →</h1>
+              <div onClick={e => {
+                if (!next()) return
+                setArticleIndex(articleIndex+1)
+              }} style={{
+                cursor: next() ? 'pointer' : 'not-allowed'
+              }}>
+                <h1>
+                  <span>Next</span>
+                  <Icon size='22px' color='#444746'>round_east</Icon>
+                </h1>
+                <p>{next() ? next().title : 'No more thing'}</p>
               </div>
             </div>
             <svg aria-hidden="true" width="100%" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
